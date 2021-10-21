@@ -27,6 +27,7 @@ export default function Store(){
         loadGames();
         loadGenres();
     },[]);
+   
     // finish useEffect implements
     // Start the implementation of the jsx from store page
     return (

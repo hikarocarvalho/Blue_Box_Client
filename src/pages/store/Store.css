@@ -28,7 +28,11 @@
     justify-content: center;
     align-items:center;
     color:#e9c46a;
+    margin-bottom: 2rem;
 }
 .box-library .newGame:hover{
     box-shadow:0 0 5px 2px #e9c46a;
+}
+.items-library{
+    margin-top: 2rem;
 }

@@ -18,7 +18,7 @@ export default function Library(){
         setGenres(res);
     }
     const loadGames = async () =>{
-        const response = await Api.buildApiGetRequest(Api.readAllGamesListUrl(1));
+        const response = await Api.buildApiGetRequest(Api.readAllGamesListUrl());
         const res = await response.json();
         const arrayGames = [];
         res.map((game)=>arrayGames.push(game.game));

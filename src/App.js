@@ -1,22 +1,24 @@
-
 import './App.css';
-import { BrowserRouter as Router,Link} from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 import Routes from './Routes';
+import GuardedLinks from './components/GuardedLinks/GuardedLinks';
 function App() {
+  
   return (
     <div className="App">
       
       <Router>
-        <Link to="/">login</Link>        
-        <Link to="/register">register</Link>
-        <Link to="/perfil">perfil</Link>
-        <Link to="/manager">manager</Link>
-        <Link to="/library">library</Link>
-        <Link to="/login">store</Link>
-        <Link to="/description/0">description</Link>
-        <Routes>
-
-        </Routes>
+        <nav className='menu'>
+          <GuardedLinks to="/">Store</GuardedLinks>        
+          <GuardedLinks to="/register">Register</GuardedLinks>
+          <GuardedLinks to="/perfil">Profiles</GuardedLinks>
+          <GuardedLinks to="/manager">Manager</GuardedLinks>
+          <GuardedLinks to="/library">Library</GuardedLinks>
+          <GuardedLinks to="/login">Login</GuardedLinks>
+          <GuardedLinks to="/logout">Logout</GuardedLinks>
+        </nav>
+        
+        <Routes/>
       </Router>
     </div>
   );
