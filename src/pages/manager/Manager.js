@@ -5,7 +5,7 @@ import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
 import { Api } from "../../Api/Api";
 import "./Manager.css";
-export default function Manager(){
+export default function Manager(props){
     const [perfil,setPerfil] = useState([]);
     const {id} = useParams();
     useEffect(() => {
@@ -19,21 +19,52 @@ export default function Manager(){
             getPerfil();
             
         }
-    }, [id])
-    console.log(perfil[0]);
+    }, [id]);
+    const verifyAndReturn = (event)=>{
+        event.preventDefault();
+        const payLoad ={
+            title: event.target.inputTitle,
+            image: event.target.inputeImage,
+            userId: perfil.userId
+        }
+        return payLoad;
+    };
+    const create = async(event)=>{
+        const payLoad = verifyAndReturn(event);
+        event.preventDefault();
+        const response = await Api.buildApiPostRequest(
+            Api.createPerfilUrl(),
+            payLoad
+    )
+        if( response.ok ){
+            console.log("ok");
+        }else{
+            console.log("not ok");
+        }
+    };
+    const update = async(event)=>{
+        event.preventDefault();
+        const payLoad = verifyAndReturn(event);
+        const response = await Api.buildApiPatchRequest(
+            Api.updatePerfilUrl(id),
+            payLoad
+        )
+        if( response.ok ){
+            console.log(response.status)
+            console.log("ok");
+        }else{
+            console.log("not ok");
+        }
+    };
+    
+  
     return (
-        <div>
-            <Form>
-                <Input inputType="text" inputName="inputTitle" inputHold={this.value === ""?
-                    "Enter with your name Profile"
-                    : "Enter with your new name profile"
-                }>
+        <div className="manager">
+            <Form submit={ perfil.id ? update: create }  classname={"form"}>
+                <Input inputType="text" inputName="inputTitle" inputHold={perfil.title} >
                 </Input>
-                <Input inputType="text" inputName="inputImage" inputHold={this.value === ""?
-                    "Enter with the image"
-                    : "Enter with the new image"
-                }></Input>
-                <Button> Register </Button>
+                <Input inputType="text" inputName="inputImage" inputHold={perfil.image} ></Input>
+                <Button> { perfil.id ? "Save": "Register" } </Button>
             </Form>
         </div>
     );

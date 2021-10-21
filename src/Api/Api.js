@@ -16,6 +16,8 @@ export const Api = {
     +JSON.parse(Buffer.from(JwtHandler.getJwt().split('.')[1], 'base64').toString()).sub,
     readOnePerfilUrl: (id)=> Api.baseUrl+"/perfil/"+id+"/one",
     createPerfilUrl: ()=> Api.baseUrl+"/perfil",
+    updatePerfilUrl: (id)=> Api.baseUrl+"/perfil/"+id,
+    deletePerfilUrl: (id)=> Api.baseUrl+"/perfil/"+id,
 
     //end points Gener
     readAllGenreUrl: ()=> Api.baseUrl+"/genre",
