@@ -1,0 +1,13 @@
+.items{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center; 
+    width: 100%;
+    overflow-y:hidden;
+    overflow-x:scroll;
+    height: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+}

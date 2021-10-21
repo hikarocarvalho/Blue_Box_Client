@@ -1,0 +1,38 @@
+section{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.App a{
+  position: relative;
+  top:0;
+  left: 0;
+  z-index: 5;
+  color: white;
+  text-decoration: none;
+  margin: 20px;
+  cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 5px;
+  
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e9c46a;
+  border-radius: 10px;
+  
+  
+}

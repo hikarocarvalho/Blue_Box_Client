@@ -1,0 +1,41 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center; 
+}
+.favority-library .content{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.items-library .content{
+    display: block;
+    width: 90%;
+    box-shadow: 0px 0px 10px 2px black;
+    border-radius: 10px;
+    margin-top: 2%;
+    padding: 0;
+    background-color: #264653;
+    width: 100%;
+    height: auto;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    justify-content: flex-start;
+}
+.genre{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.content-ext{
+    width: 90%;
+    height: auto;
+    padding: 2%;
+    margin: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

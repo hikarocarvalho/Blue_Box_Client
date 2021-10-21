@@ -1,0 +1,62 @@
+.star{
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 1em;
+    height: 1em;
+}
+.star-outside-clean,.star-outside-full{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+.one{
+    position: relative;
+    display: block;
+    width: 0px;
+    height: 0px;
+    top: 0.15em;
+    left: -0.25em;
+    border-right: 0.5em solid transparent;
+    border-bottom: 0.41em solid #000;
+    border-left: 0.5em solid transparent;
+    transform: rotate(35deg);
+    }
+.two {
+    border-bottom: 0.4em solid #000;
+    border-left: 0.15em solid transparent;
+    border-right: 0.15em solid transparent;
+    position: relative;
+    height: 0;
+    width: 0;
+    top: -0.6em;
+    left: 0.04em;
+    display: block;
+    transform: rotate(0deg);
+    }
+.three {
+    position: relative;
+    display: block;
+    top: -0.67em;
+    left: -0.35em;
+    width: 0px;
+    height: 0px;
+    border-right: 0.5em solid transparent;
+    border-bottom: 0.41em solid #000;
+    border-left: 0.5em solid transparent;
+    transform: rotate(-36deg);
+    }
+
+.star:hover > .star-outside-clean .one,.star:hover > .star-outside-clean .two,.star:hover > .star-outside-clean .three{
+    border-bottom-color:yellow;
+
+}
+.star:hover > .star-outside-full .one,.star:hover > .star-outside-full .two,.star:hover > .star-outside-full .three{
+    border-bottom-color:black;
+}
+.star-outside-full .one,.star-outside-full .two,.star-outside-full .three{
+    border-bottom-color:yellow;
+}
