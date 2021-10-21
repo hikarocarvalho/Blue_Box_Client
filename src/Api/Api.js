@@ -1,6 +1,6 @@
 import { JwtHandler } from "../jwt-handler/JwtHandleer";
 export const Api = {
-    baseUrl:"http://localhost:3001",
+    baseUrl:"https://projectblueboxback.herokuapp.com",
     // Auth Header
     authHeader: () => ({
         Authorization: "Bearer " + JwtHandler.getJwt(),
